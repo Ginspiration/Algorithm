@@ -1,5 +1,7 @@
 package sort.bubbleSort;
 
+import publics.GenerateArrayUtil;
+
 import java.util.Arrays;
 
 import static publics.SwapUtil.swap;
@@ -16,7 +18,7 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int[] data = {1,4,3,2,5};
+        int[] data = GenerateArrayUtil.random(100000);
         bubbleSort(data);
         System.out.println(Arrays.toString(data));
     }
