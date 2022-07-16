@@ -1,6 +1,7 @@
 package sort.bubbleSort;
 
 import publics.GenerateArrayUtil;
+import publics.TimeComplexity;
 
 import java.util.Arrays;
 
@@ -18,8 +19,9 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int[] data = GenerateArrayUtil.random(100000);
+        int n = 1000;
+        int[] data = GenerateArrayUtil.random(n);
         bubbleSort(data);
-        System.out.println(Arrays.toString(data));
+        TimeComplexity.computeAndIsSorted(BubbleSort.class,data,n);
     }
 }

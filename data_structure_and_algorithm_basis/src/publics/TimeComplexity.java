@@ -4,29 +4,18 @@ import sort.mergeSort.MergeSort;
 import sort.quickSort.QuickSort;
 
 public class TimeComplexity {
-    public static void computeAndIsSorted(String algorithmName, int[] data, int n) {
+
+    public static <T> void computeAndIsSorted(Class<T> classType, int[] data, int n) {
+        String classTypeSimpleName = classType.getSimpleName();
         long start = System.nanoTime();
-//        if (algorithmName.equals("SelectSort")) {
-//            SelectSort.fun(data);
-//        }
-//        if (algorithmName.equals("InsertSort1")) {
-//            InsertSort.fun1(data);
-//        }
-//        if (algorithmName.equals("InsertSort2")) {
-//            InsertSort.fun2(data);
-//        }
-//        if (algorithmName.equals("InsertSort3")) {
-//            InsertSort.fun3(data);
-//        }
-        if (algorithmName.equals("MergeSort")) {
+        if (MergeSort.class.getSimpleName().equals(classTypeSimpleName)) {
             MergeSort.sort(data);
         }
-        if ("QuickSort".equals(algorithmName)) {
+        if (QuickSort.class.getSimpleName().equals(classTypeSimpleName)) {
             QuickSort.sort(data);
         }
-
         long end = System.nanoTime();
-        printInfo(algorithmName, data, n, start, end);
+        printInfo(classTypeSimpleName, data, n, start, end);
     }
 
     private static void printInfo(String algorithmName, int[] data, int n, long start, long end) {
@@ -36,7 +25,7 @@ public class TimeComplexity {
         int flag = 1;
         for (int i = chars.length - 1; i >= 0; i--) {
             str.append(chars[i]);
-            if ( flag++ % 4 == 0) {
+            if (flag++ % 4 == 0) {
                 str.append("_");
             }
         }
