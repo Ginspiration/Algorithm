@@ -6,16 +6,16 @@ import sort.quickSort.QuickSort;
 public class TimeComplexity {
 
     public static <T> void computeAndIsSorted(Class<T> classType, int[] data, int n) {
-        String classTypeSimpleName = classType.getSimpleName();
+        String classSimpleName = classType.getSimpleName();
         long start = System.nanoTime();
-        if (MergeSort.class.getSimpleName().equals(classTypeSimpleName)) {
+        if (MergeSort.class.getSimpleName().equals(classSimpleName)) {
             MergeSort.sort(data);
         }
-        if (QuickSort.class.getSimpleName().equals(classTypeSimpleName)) {
+        if (QuickSort.class.getSimpleName().equals(classSimpleName)) {
             QuickSort.sort(data);
         }
         long end = System.nanoTime();
-        printInfo(classTypeSimpleName, data, n, start, end);
+        printInfo(classSimpleName, data, n, start, end);
     }
 
     private static void printInfo(String algorithmName, int[] data, int n, long start, long end) {
