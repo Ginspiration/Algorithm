@@ -1,4 +1,4 @@
-package review;
+package review.old;
 
 import publics.ArrayPrinter;
 import publics.GenerateArrayUtil;

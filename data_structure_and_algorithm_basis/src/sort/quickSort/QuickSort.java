@@ -2,6 +2,8 @@ package sort.quickSort;
 
 import sort.insertSort.InsertSort;
 
+import java.util.Random;
+
 public class QuickSort {
 
     public static void sort(int[] data) {
@@ -16,26 +18,24 @@ public class QuickSort {
             InsertSort.sort(data,left,right);
             return;
         }
-        int p = partitionPlus(data, left, right);
+        int p = partition(data, left, right);
         quickSort(data, left, p - 1);
         quickSort(data, p + 1, right);
     }
 
     /**-------------------------------------------------------------------
-     * 数据结构算法体系课
+     * 数据结构算法体系课,经典排序
      * QuickSort,spendTime:10.1966425s 排序成功
      * @param data
      * @param left
      * @param right
      * @return
      */
-    private static int partitionPlus(int[] data, int left, int right) {
+    private static int partitionOldClassic(int[] data, int left, int right) {
 
-//        int randomP = new Random().nextInt(right - left) + left;//生成一个随机下标
-//        swap(data,randomP,left);
+        int randomP = new Random().nextInt(right - left) + left;//生成一个随机下标
+        swap(data,randomP,left);
 
-        int medianP = (left + right)/2;//取中间值
-        swap(data,medianP,left);
 
         //指定随机一个中间值
         int p = data[left];
@@ -68,6 +68,10 @@ public class QuickSort {
      * @return
      */
     private static int partition(int[] data, int start, int end) {
+
+        int randomP = new Random().nextInt(end - start) + start;//生成一个随机下标
+        swap(data,randomP,start);
+
         // 确定枢轴元素
         int pivot = data[start];
         // 定义两个指针（引用），一个指向数组左端，一个指向数组右端
