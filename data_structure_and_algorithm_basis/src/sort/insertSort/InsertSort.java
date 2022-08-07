@@ -24,18 +24,19 @@ public class InsertSort {
      * @param data
      */
     public static void sort(int[] data) {
-        sort(data,0, data.length -1);
+        sort(data, 0, data.length - 1);
     }
 
     /**
      * 插入排序发的特点是：从数组左边开始排序，排好序的数都放在左边，
      * 右边的数如果大于左边的数，则第二个循环不用执行，
      * 右边的数如果小于左边的数，则将它插入到合适位置
+     *
      * @param data
      * @param left
      * @param right
      */
-    public static void sort(int[] data,int left , int right) {
+    public static void sort(int[] data, int left, int right) {
         for (int i = left; i <= right; i++) {
             int min = data[i];
             int j;

@@ -2,8 +2,8 @@ package review.day20220717;
 
 import publics.GenerateArrayUtil;
 import publics.SortedUtil;
-import publics.TimeComplexity;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import static publics.SwapUtil.swap;
@@ -11,21 +11,21 @@ import static publics.SwapUtil.swap;
 public class QuickSort {
 
     public static void sort(int[] data) {
-        quickSort(data,0,data.length-1);
+        quickSort(data, 0, data.length - 1);
     }
 
     public static void quickSort(int[] data, int left, int right) {
-            if (left>=right)
-                return;
+        if (left >= right)
+            return;
         int p = partition(data, left, right);
-        quickSort(data,left,p-1);
-        quickSort(data,p+1,right);
+        quickSort(data, left, p - 1);
+        quickSort(data, p + 1, right);
     }
 
     public static int partition(int[] data, int left, int right) {
         //生成一个随机下标和p位置交换
         int randomP = new Random().nextInt(right - left) + left;//生成一个随机下标
-        swap(data,randomP,left);
+        swap(data, randomP, left);
 
         //从小到大排序
         //以left为空槽p
@@ -52,7 +52,9 @@ public class QuickSort {
     public static void main(String[] args) {
         int n = 10;
         int[] data = GenerateArrayUtil.random(n, true);
-        sort(data);
-        SortedUtil.isSorted(data,true);
+//        sort(data);
+//        SortedUtil.isSorted(data, true);
+
+        System.out.println(Arrays.toString(Arrays.copyOf(data, 2)));
     }
 }

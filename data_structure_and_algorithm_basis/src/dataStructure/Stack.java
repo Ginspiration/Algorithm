@@ -23,7 +23,7 @@ public class Stack {
     }
 
     public void push(int e) {
-        data[getSize()]=e;
+        data[getSize()] = e;
         size++;
     }
 
@@ -34,7 +34,7 @@ public class Stack {
     }
 
     public int peek() {
-        return data[getSize()-1];
+        return data[getSize() - 1];
     }
 
     @Override
@@ -44,7 +44,7 @@ public class Stack {
         for (int i = 0; i < getSize(); i++) {
             str.append(data[i]).append(",");
         }
-        str.delete(str.length()-1,str.length());
+        str.delete(str.length() - 1, str.length());
         str.append("]");
         return str.toString();
     }

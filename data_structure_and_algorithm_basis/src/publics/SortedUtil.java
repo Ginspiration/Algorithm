@@ -9,10 +9,9 @@ public class SortedUtil {
     public static void isSorted(int[] data, boolean... condition) {
         boolean ifReverse = false;
         boolean ifPrint = false;
-        if (condition.length == 1 ) {
+        if (condition.length == 1) {
             ifPrint = condition[0];
-        }
-        if (condition.length == 2) {
+        } else if (condition.length == 2) {
             ifPrint = condition[0];
             ifReverse = condition[1];
         }
@@ -24,7 +23,7 @@ public class SortedUtil {
         if (!ifReverse) {
             for (int i = 0; i < data.length - 1; i++) {
                 if (data[i] > data[i + 1]) {
-                    System.out.println("正序排序失败!");
+                    System.out.println("正序排序失败");
                     return;
                 }
             }
@@ -32,7 +31,7 @@ public class SortedUtil {
         } else {
             for (int i = 0; i < data.length - 1; i++) {
                 if (data[i] < data[i + 1]) {
-                    System.out.println("逆序排序失败!");
+                    System.out.println("逆序排序失败");
                     return;
                 }
             }

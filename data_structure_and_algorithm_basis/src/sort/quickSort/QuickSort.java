@@ -5,7 +5,6 @@ import sort.insertSort.InsertSort;
 import java.util.Random;
 
 public class QuickSort {
-
     public static void sort(int[] data) {
         quickSort(data, 0, data.length - 1);
     }
@@ -15,7 +14,7 @@ public class QuickSort {
 //            return;
 //        }
         if (right - left <= 15) {//小规模数据量插入排序发快 QuickSort,n=100000000,spendTime:8.833512s排序成功
-            InsertSort.sort(data,left,right);
+            InsertSort.sort(data, left, right);
             return;
         }
         int p = partition(data, left, right);
@@ -23,9 +22,11 @@ public class QuickSort {
         quickSort(data, p + 1, right);
     }
 
-    /**-------------------------------------------------------------------
+    /**
+     * -------------------------------------------------------------------
      * 数据结构算法体系课,经典排序
      * QuickSort,spendTime:10.1966425s 排序成功
+     *
      * @param data
      * @param left
      * @param right
@@ -34,7 +35,7 @@ public class QuickSort {
     private static int partitionOldClassic(int[] data, int left, int right) {
 
         int randomP = new Random().nextInt(right - left) + left;//生成一个随机下标
-        swap(data,randomP,left);
+        swap(data, randomP, left);
 
 
         //指定随机一个中间值
@@ -43,25 +44,28 @@ public class QuickSort {
         int j = left + 1;//依次向右边遍历
         while (j <= right) {
             if (data[j] < p) {
-                swap(data,++i,j);
+                swap(data, ++i, j);
             }
             j++;
         }
-        swap(data,left,i);
+        swap(data, left, i);
         return i;
     }
+
     /**
      * 交换
      */
-    private static void swap(int[] data, int a ,int b){
+    private static void swap(int[] data, int a, int b) {
         int temp = data[a];
         data[a] = data[b];
         data[b] = temp;
     }
 
-    /**-------------------------------------------------------------------
+    /**
+     * -------------------------------------------------------------------
      * 原理见png挖坑填数
      * QuickSort,spendTime:10.7414781s 排序成功
+     *
      * @param data
      * @param start
      * @param end
@@ -70,7 +74,7 @@ public class QuickSort {
     private static int partition(int[] data, int start, int end) {
 
         int randomP = new Random().nextInt(end - start) + start;//生成一个随机下标
-        swap(data,randomP,start);
+        swap(data, randomP, start);
 
         // 确定枢轴元素
         int pivot = data[start];

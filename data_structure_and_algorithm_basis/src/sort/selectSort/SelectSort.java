@@ -20,12 +20,13 @@ public class SelectSort {
             data[minIndex] = temp;
         }
     }
+
     //逆序
     public static void fun2(int[] data) {
-        for (int i = data.length - 1; i >0; i--) {
+        for (int i = data.length - 1; i > 0; i--) {
             int maxIndex = i;
             //查找最小元素
-            for (int j = i -1; j >= 0; j--) {
+            for (int j = i - 1; j >= 0; j--) {
                 if (data[j] > data[maxIndex]) {
                     maxIndex = j;
                 }

@@ -23,7 +23,7 @@ public class GenerateArrayUtil {
     public static int[] random(int n, boolean ifPrintData) {
         int[] data = random(n, n);
         if (ifPrintData)
-            System.out.println("source data: "+Arrays.toString(data));
+            System.out.println("source data: " + Arrays.toString(data));
         return data;
     }
 
@@ -48,4 +48,12 @@ public class GenerateArrayUtil {
         return new int[]{234, 2, 23, 51, 1, 53, 123, 3123, 41, 1, 3, 436, 1, 1, 1};
     }
 
+    /**生成值一样的数组*/
+    public static int[] same(int n){
+        int[] data = new int[n];
+        for (int i = 0; i < n; i++) {
+            data[i] = 0;
+        }
+        return data;
+    }
 }

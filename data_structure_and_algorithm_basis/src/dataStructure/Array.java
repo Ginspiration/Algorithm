@@ -7,34 +7,37 @@ public class Array {
 
     public Array(int capacity) {
         data = new int[capacity];
-        this.capacity = capacity-1;
+        this.capacity = capacity - 1;
     }
 
-    public Array(){
-       this(10);
+    public Array() {
+        this(10);
     }
 
     public int getSize() {
         return size;
     }
 
-    public void add(int e){
-        if (getSize()>capacity) {
+    public void add(int e) {
+        if (getSize() > capacity) {
             throw new RuntimeException("容量不足");
         }
         data[size] = e;
         size++;
     }
-    public void del(int index){
-        for (int i = index; i < getSize()-1; i++) {
-            data[i] = data[i+1];
+
+    public void del(int index) {
+        for (int i = index; i < getSize() - 1; i++) {
+            data[i] = data[i + 1];
         }
         size--;
     }
-    public void set(int index,int e){
+
+    public void set(int index, int e) {
         data[index] = e;
     }
-    public int get(int index){
+
+    public int get(int index) {
         return data[index];
     }
 
@@ -45,7 +48,7 @@ public class Array {
         for (int i = 0; i < getSize(); i++) {
             str.append(data[i]).append(",");
         }
-        str.delete(str.length()-1,str.length());
+        str.delete(str.length() - 1, str.length());
         str.append("]");
         return str.toString();
     }

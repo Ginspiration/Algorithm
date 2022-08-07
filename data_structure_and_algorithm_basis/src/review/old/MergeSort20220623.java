@@ -12,7 +12,7 @@ public class MergeSort20220623 {
     }
 
     public static void mergeSort(int[] data, int left, int right, int[] dataTemp) {
-        if(right == left) return;
+        if (right == left) return;
         int mid = (left + right) / 2;
         mergeSort(data, left, mid, dataTemp);
         mergeSort(data, mid + 1, right, dataTemp);

@@ -1,6 +1,5 @@
 package review.day20220717;
 
-import publics.ArrayPrinter;
 import publics.GenerateArrayUtil;
 import publics.SortedUtil;
 
@@ -45,8 +44,8 @@ public final class MergeSort {
     }
 
     public static void main(String[] args) {
-        int[] data = GenerateArrayUtil.random(10,true);
+        int[] data = GenerateArrayUtil.random(10, true);
         sort(data);
-        SortedUtil.isSorted(data, true,true);
+        SortedUtil.isSorted(data, true, true);
     }
 }
